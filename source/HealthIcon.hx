@@ -43,6 +43,7 @@ class HealthIcon extends FlxSprite
 		animation.add('gf', [16, 49, (_id != -1) ? 49 : 35], 0, false, isPlayer);
 		animation.add('gf-car', [16, 49, 35], 0, false, isPlayer);
 		animation.add('gf-pixel', [16, 49, 35], 0, false, isPlayer);
+		animation.add('flippy-kapow', [12, 13, 34], 0, false, isPlayer);
 
 		iconSize = width;
 

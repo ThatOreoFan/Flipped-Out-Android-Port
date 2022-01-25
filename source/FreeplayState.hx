@@ -59,6 +59,10 @@ class FreeplayState extends MusicBeatState
 
 		if (StoryMenuState.weekUnlocked[6] || isDebug)
 			addWeek(['Senpai', 'Roses', 'Thorns'], 6, ['senpai', 'senpai-angry', 'spirit']);
+			
+		if (StoryMenuState.weekUnlocked[2] || isDebug)
+			addWeek(['Kapow'], 1, ['flippy-kapow']);
+
 
 
 		// LOAD CHARACTERS

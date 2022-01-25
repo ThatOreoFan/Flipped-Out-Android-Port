@@ -135,6 +135,22 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 2, -32);
 
 				playAnim('idle');
+			case 'flippy-kapow':
+				// DAD ANIMATION LOADING CODE
+				frames = Paths.getSparrowAtlas("FLIPPY_kapow");
+				animation.addByPrefix('idle', 'KAPOW idle', 24, false);
+				animation.addByPrefix('singUP', 'KAPOW up', 24);
+				animation.addByPrefix('singRIGHT', 'KAPOW right', 24);
+				animation.addByPrefix('singDOWN', 'KAPOW down', 24);
+				animation.addByPrefix('singLEFT', 'KAPOW left', 24);
+				
+				addOffset('idle');
+				addOffset("singUP", -9, 50);
+				addOffset("singRIGHT", -4, 26);
+				addOffset("singLEFT", -11, 10);
+				addOffset("singDOWN", 2, -32);
+
+				playAnim('idle');
 			case 'spooky':
 				frames = Paths.getSparrowAtlas("spooky_kids_assets");
 				animation.addByPrefix('singUP', 'spooky UP NOTE', 24, false);

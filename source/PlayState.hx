@@ -644,7 +644,25 @@ class PlayState extends MusicBeatState
 
 			add(stageCurtains);
 		}
+			defaultCamZoom = 0.9;
+			curStage = 'kapowStage';
+			var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image("kapow"));
+			// bg.setGraphicSize(Std.int(bg.width * 2.5));
+			// bg.updateHitbox();
+			bg.antialiasing = true;
+			bg.scrollFactor.set(0.9, 0.9);
+			bg.active = false;
+			add(bg);
+			
+			var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image("lights"));
+			stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
+			stageCurtains.updateHitbox();
+			stageCurtains.antialiasing = true;
+			stageCurtains.scrollFactor.set(1.3, 1.3);
+			stageCurtains.active = false;
 
+			add(stageCurtains);
+	    }
 		switch(SONG.song.toLowerCase()){
 			case "tutorial":
 				autoZoom = false;
@@ -741,6 +759,8 @@ class PlayState extends MusicBeatState
 				dad.x -= 150;
 				dad.y += 100;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'flippy-kapow':
+				camPos.x += 400;
 		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -905,7 +925,7 @@ class PlayState extends MusicBeatState
 		scoreTxt.scrollFactor.set();
 
 		creditTxt = new FlxText(876, 648, 348);
-                creditTxt.text = 'PORTED BY\nM.A. JIGSAW';
+                creditTxt.text = 'Portado Por\nYuriModder';
                 creditTxt.setFormat(Paths.font("vcr"), 30, FlxColor.WHITE, RIGHT);
                 creditTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 3, 1);       
                 creditTxt.scrollFactor.set();
@@ -1639,9 +1659,9 @@ class PlayState extends MusicBeatState
 
 		switch(Config.accuracy){
 			case "none":
-				scoreTxt.text = "Score:" + songScore;
+				scoreTxt.text = "Pontuação:" + songScore;
 			default:
-				scoreTxt.text = "Score:" + songScore + " | Misses:" + misses + " | Accuracy:" + truncateFloat(accuracy, 2) + "%";
+				scoreTxt.text = "Pontuação:" + songScore + " | Erros:" + misses + " | Precisão:" + truncateFloat(accuracy, 2) + "%";
 		}
 
 		if (controls.PAUSE #if android || FlxG.android.justReleased.BACK #end && startedCountdown && canPause)
