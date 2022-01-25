@@ -663,7 +663,7 @@ class PlayState extends MusicBeatState
 
 			add(stageCurtains);
 	    }
-		switch(SONG.song.toLowerCase())}
+		switch(SONG.song.toLowerCase())
 			case "tutorial":
 				autoZoom = false;
 				dadBeats = [0, 1, 2, 3];
